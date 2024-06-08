@@ -1,0 +1,28 @@
+import { RunVideoDownloader } from '@/app/actions'
+import { isValidYtLink, useMediaPlatformContext } from '@/context/VideoPlatformContext'
+import React, { useEffect } from 'react'
+
+export default function useGetDetailsFromServer() {
+    const [videoDetails, setVideoDetails] = React.useState<any>(undefined)
+    const { mediaPlatform, videoUrl, handleDetailsLoading } = useMediaPlatformContext()
+    const getVideoDetails = async () => {
+        try {
+          if (isValidYtLink(videoUrl) && videoUrl !== '') {
+            handleDetailsLoading(true)
+            const videoDetails = await RunVideoDownloader(mediaPlatform, videoUrl, 'details')
+            handleDetailsLoading(false)
+            const ifvideoDetails = videoDetails && ('formats' in videoDetails || 'title' in videoDetails)
+            if (ifvideoDetails) {
+              setVideoDetails(videoDetails)
+            }
+          }
+        } catch (e) {
+          console.log(e)
+          handleDetailsLoading(false)
+        }
+      } 
+    useEffect(() => {
+      getVideoDetails()
+    }, [videoUrl, mediaPlatform])
+    return { videoDetails }
+}

@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import InputComponent from './InputComponent'
-import ButtonsBar from './ButtonsBar'
+import ButtonsBar from './Buttons/ButtonsBar'
 import DownloadIcon from '@/assets/DownloadIcon'
 import { useMediaPlatformContext } from '@/context/VideoPlatformContext'
 export type MediaPlatforms = 'youtube' | 'facebook' | 'twitter' | 'instagram' | 'vimeo' | 'whatsapp'

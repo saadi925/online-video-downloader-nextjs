@@ -5,6 +5,7 @@ interface HeaderProps {
   isSidebar : boolean
 }
 import Link from "next/link";
+import { YTIcon } from '@/assets/Socialcons';
 
 export const Header = ({
 }: HeaderProps) => {
@@ -33,13 +34,20 @@ export const Header = ({
         </Link>
         {/*  header  right  */}
         <div className="flex">
-    
           <div
-            className={`flex items-center  px-2  text-surface rounded-xl `}
+            className={`flex items-center gap-3  px-2  text-surface rounded-xl `}
           >
-         <div className="text-white underline">
-          Saad Bukhari
-         </div>
+        <Link href={'https://www.youtube.com/channel/UCjLEAzb2LjcdFJV0bfnRYrQ'} className="flex items-center gap-2 text-white underline">
+          <YTIcon />
+          Youtube
+        </Link>
+
+         <Link href={'https://github.com/saadi925/online-video-downloader-nextjs'} className="text-white text-sm underline text-center">
+         <span className='hidden md:block'>
+         Source Code 
+          </span>
+           Github 
+         </Link>
           </div>
         </div>
 

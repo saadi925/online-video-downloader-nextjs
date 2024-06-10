@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Open_Sans } from "next/font/google";
 import "./globals.css";
 import AppWrapper from "../components/AppWrapper";
+import Script from "next/script";
 
 const inter = Open_Sans({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({
       <AppWrapper >
         {children}
       </AppWrapper>
+    
         </body>
     </html>
   );

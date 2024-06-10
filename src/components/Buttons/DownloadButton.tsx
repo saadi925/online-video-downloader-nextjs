@@ -12,24 +12,24 @@ export default function DownloadButton({ videoDetails } :{
  const outputPath = `${videoDetails.title}.${videoOption?.container}`
   const quality = parseInt(qualityFromString[0].replace('p', ''))
   const videoTitle = encodeURIComponent(videoDetails.title)
-  const onDownload = async () =>{
-    const response =  await fetch(`/api/download?videoUrl=${videoUrl}&outputPath=${outputPath}&quality=${quality}&container=${videoOption?.container}`)
+  // DIRECT DOWNLOAD FROM A BUTTON IS NOT COMPLETED, IT MAY REQUIRE SOME CHANGES IN THE 
+  // /src/app/api/download/route.ts
+  // // USING THE CURRENT IMPLEMENTATION OF THIS FUNCTION  WILL DOWNLOAD THE VIDEO ON THE SERVER INSTEAD OF DOWNLOADING IT TO CLIENT
+  // const onDownload = async () =>{
+  //   const url = `/api/download?videoUrl=${videoUrl}&outputPath=${outputPath}&quality=${quality}&container=${videoOption?.container}`
+  //   const response =  await fetch(url)
     
-    const blob = await response.blob();
+  //   const blob = await response.blob();
 
-    // Create a URL for the blob
-    const blobUrl = URL.createObjectURL(blob);
+  //   const blobUrl = URL.createObjectURL(blob);
 
-    // Trigger the download
-    const link = document.createElement('a');
-    link.href = blobUrl;
-    link.download = outputPath; // Set the desired filename
-    link.click();
-
-    // Clean up the URL
-    URL.revokeObjectURL(blobUrl);
-  }
-  // Construct the URL with necessary parameters
+  //   // Trigger the download
+  //   const link = document.createElement('a');
+  //   link.href = blobUrl;
+  //   link.download = outputPath; 
+  //   link.click();
+  //   URL.revokeObjectURL(blobUrl);
+  // }
   const urlParams = new URLSearchParams({
     title: videoTitle,
   }).toString()
@@ -38,7 +38,6 @@ export default function DownloadButton({ videoDetails } :{
 
   return (
     <a 
-    // onClick={onDownload}
       data-quality={quality}
       title={`video format: ${quality}`}
       className="px-6 !bg-paper-black text-white flex gap-1 items-center border py-2 font-semibold"

@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Hi, I'm Saad! 👋
 
-First, run the development server:
+# Project Name 
+ online-video-downloader-nextjs
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Authors
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [@saadi925](https://www.github.com/saadi925)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+# Project Title
 
-## Learn More
+express-samplets-starter
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Installation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Clone the repository:
 
-## Deploy on Vercel
+https://github.com/saadi925/online-video-downloader-nextjs.git
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+cd express-samplets-starter
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Install dependencies:
+
+npm install
+
+or
+
+yarn install
+
+or 
+
+pnpm install
+
+## Scripts
+
+Start the development server with hot reloading  : npm run dev 
+
+Compile TypeScript to JavaScript
+:
+npm run build
+
+
+Start the production server
+:npm start
+
+Run ESLint to check for linting errors:
+npm run lint
+
+
+Format the code using Prettier:
+npm run format
+## Support
+
+For support, email userid925925@gmail.com
+
+
+## Features
+
+- Youtube Video Download
+- Genric Endpoints are used with type guards so users can implement more methods easily
+- Customizable ensuring Type safety
+## Contributing
+
+Contributions are always welcome!
+
+Please adhere to this project's `code of conduct`.
